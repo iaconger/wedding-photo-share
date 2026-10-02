@@ -5,23 +5,21 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Kiley & Ian · Photo Sign</title>
 <meta name="robots" content="noindex">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;1,6..96,400&family=Figtree:wght@400;500;600&display=swap">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/style.css">
 <style>
   /* A 5x7 table sign. Print it from the browser, or save the QR on its own. */
-  :root { --ink: #16302f; --muted: #5d7170; --leaf: #b9792a; --line: #d5dedb; }
-  * { box-sizing: border-box; }
-  body { margin: 0; background: #e7ecea; color: var(--ink); font: 400 1rem/1.5 "Figtree", system-ui, sans-serif; display: grid; gap: 1.25rem; justify-items: center; padding: 1.5rem 1rem 3rem; }
+  body { background: var(--soft); display: grid; gap: 1.25rem; justify-items: center; padding: 1.5rem 1rem 3rem; }
   .toolbar { display: flex; gap: .75rem; flex-wrap: wrap; justify-content: center; }
-  .toolbar a, .toolbar button { font: 600 .9375rem/1 "Figtree", system-ui, sans-serif; color: #fff; background: #2c6166; border: 0; border-radius: 999px; padding: .85rem 1.25rem; text-decoration: none; cursor: pointer; }
-  .toolbar a { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
-  .sign { width: 5in; max-width: 100%; aspect-ratio: 5 / 7; background: #fff; padding: .5in .45in; display: grid; grid-template-rows: auto 1fr auto; justify-items: center; text-align: center; gap: .2in; }
-  .eyebrow { margin: 0; font-size: .7rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--leaf); }
-  h1 { font: italic 400 2.6rem/1 "Bodoni Moda", "Didot", serif; margin: .12in 0 0; }
-  h1 span { color: var(--leaf); font-size: .7em; }
-  .qr { align-self: center; width: 2.6in; max-width: 100%; display: grid; gap: .15in; }
+  .toolbar .btn { width: auto; min-height: 2.75rem; font-size: .9375rem; text-decoration: none; }
+  .sign { width: 5in; max-width: 100%; aspect-ratio: 5 / 7; background: #fff; padding: .45in .45in .5in; display: grid; grid-template-rows: auto 1fr auto; justify-items: center; text-align: center; gap: .15in; }
+  .sign .monogram { font-size: 2.75rem; margin-bottom: .1in; }
+  .sign h1 { font-size: 2.25rem; }
+  .sign h1 .and { display: inline; font-size: .8125rem; padding-inline: .35em; }
+  .qr { align-self: center; width: 2.5in; max-width: 100%; }
   .qr img { width: 100%; display: block; }
-  h2 { font: 400 1.5rem/1.15 "Bodoni Moda", "Didot", serif; margin: 0; }
-  p { margin: .08in 0 0; color: var(--muted); font-size: .85rem; }
+  .sign h2 { font-size: 2rem; }
+  .sign p { margin: .06in auto 0; color: var(--muted); font-size: .78rem; max-width: 3.4in; }
   @media print {
     @page { size: 5in 7in; margin: 0; }
     body { background: #fff; padding: 0; display: block; }
@@ -32,13 +30,13 @@
 </head>
 <body>
   <div class="toolbar">
-    <button type="button" onclick="window.print()">Print sign (5 × 7)</button>
-    <a href="/qr.png">Download QR only</a>
+    <button class="btn primary" type="button" onclick="window.print()">Print sign (5 × 7)</button>
+    <a class="btn ghost" href="/qr.png">Download QR only</a>
   </div>
   <div class="sign">
     <div>
-      <p class="eyebrow">October 10, 2026</p>
-      <h1>Kiley <span>&amp;</span> Ian</h1>
+      <div class="monogram" aria-hidden="true"><span class="k">K</span><span class="amp">&amp;</span><span class="i">I</span></div>
+      <h1>Kiley Hunt <span class="and">and</span> Ian Conger</h1>
     </div>
     <div class="qr"><img src="/qr.svg" alt="QR code to the wedding photo album"></div>
     <div>

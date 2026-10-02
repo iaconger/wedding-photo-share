@@ -149,7 +149,7 @@ app.get('/download.zip', async (req, res, next) => {
 const siteUrl = (req) => process.env.SITE_URL || `${req.protocol}://${req.get('host')}/`;
 app.get('/qr.svg', async (req, res, next) => {
   try {
-    const svg = await QRCode.toString(siteUrl(req), { type: 'svg', errorCorrectionLevel: 'M', margin: 0, color: { dark: '#16302f', light: '#0000' } });
+    const svg = await QRCode.toString(siteUrl(req), { type: 'svg', errorCorrectionLevel: 'M', margin: 0, color: { dark: '#0e0e0e', light: '#0000' } });
     res.type('image/svg+xml').send(svg);
   } catch (e) { next(e); }
 });
