@@ -1,0 +1,20 @@
+{
+  "name": "wedding-photo-share",
+  "version": "1.0.0",
+  "description": "Guest photo sharing page for Kiley and Ian's wedding",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "license": "UNLICENSED",
+  "dependencies": {
+    "archiver": "^7.0.1",
+    "express": "^4.22.3",
+    "pg": "^8.23.1",
+    "qrcode": "^1.5.4"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "private": true
+}

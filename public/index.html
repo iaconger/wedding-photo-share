@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Kiley & Ian · Wedding Photos</title>
+<meta name="description" content="Share your photos from Kiley and Ian's wedding and see everyone else's.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;1,6..96,400;1,6..96,500&family=Figtree:wght@400;500;600&display=swap">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<main class="wrap">
+
+  <!-- Share view -->
+  <section id="share" class="view">
+    <header class="masthead">
+      <p class="eyebrow">October 10, 2026</p>
+      <h1><em>Kiley</em> <span class="amp">&amp;</span> <em>Ian</em></h1>
+      <p class="lede">Add the photos you take today. They go into one album that everyone here can see.</p>
+    </header>
+
+    <div class="card">
+      <label class="field" for="guest-name">
+        <span>Your name <small>optional</small></span>
+        <input id="guest-name" type="text" maxlength="40" autocomplete="name" placeholder="So we know who took them">
+      </label>
+
+      <input id="file-input" type="file" accept="image/*" multiple hidden>
+      <button id="pick" class="btn primary" type="button">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        Add photos
+      </button>
+
+      <div id="progress" class="progress" hidden>
+        <div class="bar"><i id="bar-fill"></i></div>
+        <p id="progress-text" role="status" aria-live="polite"></p>
+      </div>
+      <p id="notice" class="notice" role="status" aria-live="polite" hidden></p>
+      <div id="just-added" class="strip" hidden></div>
+    </div>
+
+    <button id="to-gallery" class="btn ghost" type="button">
+      See everyone's photos <span id="count-pill" class="pill" hidden></span>
+    </button>
+  </section>
+
+  <!-- Gallery view -->
+  <section id="gallery" class="view" hidden>
+    <header class="gallery-head">
+      <button id="to-share" class="back" type="button">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg> Add photos
+      </button>
+      <div>
+        <h2><em>Everyone's photos</em></h2>
+        <p id="gallery-count" class="muted"></p>
+      </div>
+      <a id="download-all" class="back" href="#" hidden>Download all</a>
+    </header>
+    <div id="grid" class="grid"></div>
+    <p id="empty" class="empty" hidden>No photos yet. Yours could be the first.</p>
+    <div id="sentinel" class="sentinel"></div>
+  </section>
+</main>
+
+<!-- Full size viewer -->
+<div id="viewer" class="viewer" hidden>
+  <button id="v-close" class="v-btn v-close" type="button" aria-label="Close">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+  <button id="v-prev" class="v-btn v-nav v-prev" type="button" aria-label="Previous photo">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+  </button>
+  <img id="v-img" alt="">
+  <button id="v-next" class="v-btn v-nav v-next" type="button" aria-label="Next photo">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+  </button>
+  <div class="v-foot">
+    <span id="v-caption"></span>
+    <span class="v-actions">
+      <a id="v-save" class="v-link" href="#">Save</a>
+      <button id="v-delete" class="v-link danger" type="button" hidden>Remove</button>
+    </span>
+  </div>
+</div>
+
+<script src="/app.js"></script>
+</body>
+</html>
