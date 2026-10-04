@@ -5,6 +5,7 @@ Guest photo page for Kiley and Ian's wedding (October 10, 2026). Guests scan a Q
 - `/` add photos, and a button through to the album
 - `/#photos` the shared album
 - `/sign` printable 5x7 table sign with the QR code
+- `/tent` printable table tent (one Letter sheet, folded in half, QR on both faces)
 - `/?host=KEY` turns on host mode on that device (remove photos, download all as a zip)
 
 ## Stack

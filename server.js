@@ -160,6 +160,7 @@ app.get('/qr.png', async (req, res, next) => {
   } catch (e) { next(e); }
 });
 app.get('/sign', (req, res) => res.sendFile(path.join(__dirname, 'public', 'sign.html')));
+app.get('/tent', (req, res) => res.sendFile(path.join(__dirname, 'public', 'tent.html')));
 
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: '5m' }));
 
