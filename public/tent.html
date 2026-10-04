@@ -3,33 +3,30 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Kiley & Ian · Table Tent</title>
+<title>Kiley & Ian · Table Tents</title>
 <meta name="robots" content="noindex">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/style.css">
 <style>
-  /* Table tent: one US Letter sheet, folded once across the middle.
-     Two identical faces, the top one upside down so both read upright when it stands. */
+  /* Small table tents: four to a US Letter sheet. Each card is 3.5 x 5 in, folded once
+     to stand as a 3.5 x 2.5 in tent. Top face is upside down so both sides read upright. */
   body { background: var(--soft); display: grid; gap: 1.25rem; justify-items: center; padding: 1.5rem 1rem 3rem; }
   .toolbar { display: flex; gap: .75rem; flex-wrap: wrap; justify-content: center; align-items: center; }
   .toolbar .btn { width: auto; min-height: 2.75rem; font-size: .9375rem; }
   .toolbar p { margin: 0; font: 500 .875rem/1.4 var(--ui); color: var(--muted); }
-  .sheet { width: 8.5in; height: 11in; background: #fff; position: relative; display: grid; grid-template-rows: 1fr 1fr; flex: none; }
-  .face { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: .5in; padding: .55in .7in; text-align: center; }
-  .face.flip { transform: rotate(180deg); }
-  .face .monogram { font-size: 3rem; margin-bottom: .12in; }
-  .face h1 { font-size: 2.5rem; -webkit-text-stroke: .45px currentColor; }
-  .face h1 .and { line-height: 1.9; }
-  .face h2 { font: 400 1.0625rem/1.4 var(--serif); margin-top: .22in; }
-  .face p { margin: .06in auto 0; color: var(--muted); font-size: .8125rem; max-width: 3.1in; }
-  .qr { width: 2.7in; }
-  .qr img { width: 100%; display: block; }
-  .qr span { display: block; margin-top: .1in; font: 600 .6875rem/1 var(--ui); letter-spacing: .16em; text-transform: uppercase; }
-  .fold { position: absolute; top: 50%; left: 0; right: 0; height: 0; }
-  .fold::before, .fold::after { content: ""; position: absolute; top: 0; width: .3in; border-top: 1px solid #b5b5b5; }
-  .fold::before { left: 0; }
-  .fold::after { right: 0; }
   .scroller { max-width: 100%; overflow-x: auto; }
+  .sheet { width: 8.5in; height: 11in; background: #fff; display: grid; grid-template-columns: 3.5in 3.5in; grid-template-rows: 5in 5in; place-content: center; }
+  .card { position: relative; display: grid; grid-template-rows: 1fr 1fr; outline: 1px solid #cfcfcf; }
+  .card::before, .card::after { content: ""; position: absolute; top: 50%; width: .12in; border-top: 1px solid #b5b5b5; }
+  .card::before { left: 0; }
+  .card::after { right: 0; }
+  .face { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: .14in; padding: .2in .22in; text-align: center; }
+  .face.flip { transform: rotate(180deg); }
+  .face .monogram { font-size: 1.75rem; margin-bottom: .1in; }
+  .face h2 { font-size: 1.375rem; line-height: 1.1; -webkit-text-stroke: .35px currentColor; }
+  .face p { margin: .07in auto 0; font: 500 .5625rem/1.35 var(--ui); letter-spacing: .04em; color: #555; max-width: 1.3in; }
+  .qr { width: 1.4in; }
+  .qr img { width: 100%; display: block; }
   @media print {
     @page { size: letter portrait; margin: 0; }
     body { background: #fff; padding: 0; display: block; }
@@ -40,30 +37,83 @@
 </head>
 <body>
   <div class="toolbar">
-    <button class="btn primary" type="button" onclick="window.print()">Print table tent</button>
-    <p>Letter paper, 100% scale. Fold on the two small marks.</p>
+    <button class="btn primary" type="button" onclick="window.print()">Print table tents</button>
+    <p>Four per Letter sheet at 100% scale. Cut on the grey lines, fold each card at its side marks.</p>
   </div>
   <div class="scroller">
     <div class="sheet">
-      <section class="face flip">
-        <div>
-          <div class="monogram" aria-hidden="true"><span class="k">K</span><span class="amp">&amp;</span><span class="i">I</span></div>
-          <h1>Kiley Hunt <span class="and">and</span> Ian Conger</h1>
-          <h2>Share your photos with us</h2>
-          <p>Scan with your phone camera. Add what you take tonight and see everyone else's.</p>
-        </div>
-        <div class="qr"><img src="/qr.svg" alt="QR code to the wedding photo album"><span>Scan me</span></div>
-      </section>
-      <section class="face">
-        <div>
-          <div class="monogram" aria-hidden="true"><span class="k">K</span><span class="amp">&amp;</span><span class="i">I</span></div>
-          <h1>Kiley Hunt <span class="and">and</span> Ian Conger</h1>
-          <h2>Share your photos with us</h2>
-          <p>Scan with your phone camera. Add what you take tonight and see everyone else's.</p>
-        </div>
-        <div class="qr"><img src="/qr.svg" alt=""><span>Scan me</span></div>
-      </section>
-      <div class="fold" aria-hidden="true"></div>
+      <div class="card">
+        <section class="face flip">
+          <div class="words">
+            <div class="monogram" aria-hidden="true"><span class="k">K</span><span class="amp">&amp;</span><span class="i">I</span></div>
+            <h2>Share your photos</h2>
+            <p>Scan to add yours<br>and see everyone's</p>
+          </div>
+          <div class="qr"><img src="/qr.svg" alt=""></div>
+        </section>
+        <section class="face">
+          <div class="words">
+            <div class="monogram" aria-hidden="true"><span class="k">K</span><span class="amp">&amp;</span><span class="i">I</span></div>
+            <h2>Share your photos</h2>
+            <p>Scan to add yours<br>and see everyone's</p>
+          </div>
+          <div class="qr"><img src="/qr.svg" alt="QR code to the wedding photo album"></div>
+        </section>
+      </div>
+      <div class="card">
+        <section class="face flip">
+          <div class="words">
+            <div class="monogram" aria-hidden="true"><span class="k">K</span><span class="amp">&amp;</span><span class="i">I</span></div>
+            <h2>Share your photos</h2>
+            <p>Scan to add yours<br>and see everyone's</p>
+          </div>
+          <div class="qr"><img src="/qr.svg" alt=""></div>
+        </section>
+        <section class="face">
+          <div class="words">
+            <div class="monogram" aria-hidden="true"><span class="k">K</span><span class="amp">&amp;</span><span class="i">I</span></div>
+            <h2>Share your photos</h2>
+            <p>Scan to add yours<br>and see everyone's</p>
+          </div>
+          <div class="qr"><img src="/qr.svg" alt="QR code to the wedding photo album"></div>
+        </section>
+      </div>
+      <div class="card">
+        <section class="face flip">
+          <div class="words">
+            <div class="monogram" aria-hidden="true"><span class="k">K</span><span class="amp">&amp;</span><span class="i">I</span></div>
+            <h2>Share your photos</h2>
+            <p>Scan to add yours<br>and see everyone's</p>
+          </div>
+          <div class="qr"><img src="/qr.svg" alt=""></div>
+        </section>
+        <section class="face">
+          <div class="words">
+            <div class="monogram" aria-hidden="true"><span class="k">K</span><span class="amp">&amp;</span><span class="i">I</span></div>
+            <h2>Share your photos</h2>
+            <p>Scan to add yours<br>and see everyone's</p>
+          </div>
+          <div class="qr"><img src="/qr.svg" alt="QR code to the wedding photo album"></div>
+        </section>
+      </div>
+      <div class="card">
+        <section class="face flip">
+          <div class="words">
+            <div class="monogram" aria-hidden="true"><span class="k">K</span><span class="amp">&amp;</span><span class="i">I</span></div>
+            <h2>Share your photos</h2>
+            <p>Scan to add yours<br>and see everyone's</p>
+          </div>
+          <div class="qr"><img src="/qr.svg" alt=""></div>
+        </section>
+        <section class="face">
+          <div class="words">
+            <div class="monogram" aria-hidden="true"><span class="k">K</span><span class="amp">&amp;</span><span class="i">I</span></div>
+            <h2>Share your photos</h2>
+            <p>Scan to add yours<br>and see everyone's</p>
+          </div>
+          <div class="qr"><img src="/qr.svg" alt="QR code to the wedding photo album"></div>
+        </section>
+      </div>
     </div>
   </div>
 </body>
